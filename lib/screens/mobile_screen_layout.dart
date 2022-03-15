@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MobileScreenLayout extends StatelessWidget {
@@ -10,13 +11,30 @@ class MobileScreenLayout extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Whatsapp',
+            'WhatsApp',
             style: TextStyle(
               fontSize: 20,
               color: Colors.grey,
               fontWeight: FontWeight.bold,
             ),
           ),
+          centerTitle: false,
+          actions: [
+            IconButton(
+              onPressed: () => {},
+              icon: const Icon(
+                CupertinoIcons.search,
+                color: Colors.grey,
+              ),
+            ),
+            IconButton(
+              onPressed: () => {},
+              icon: const Icon(
+                CupertinoIcons.ellipsis_vertical,
+                color: Colors.grey,
+              ),
+            )
+          ],
         ),
       ),
     );
