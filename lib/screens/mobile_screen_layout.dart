@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:watsapp_clone/colors.dart';
+import 'package:watsapp_clone/info.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
@@ -10,6 +12,7 @@ class MobileScreenLayout extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: appBarColor,
           title: const Text(
             'WhatsApp',
             style: TextStyle(
@@ -22,19 +25,41 @@ class MobileScreenLayout extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () => {},
-              icon: const Icon(
-                CupertinoIcons.search,
-                color: Colors.grey,
-              ),
+              icon: const Icon(CupertinoIcons.search, color: Colors.grey),
             ),
             IconButton(
-              onPressed: () => {},
-              icon: const Icon(
-                CupertinoIcons.ellipsis_vertical,
-                color: Colors.grey,
-              ),
-            )
+                onPressed: () => {},
+                icon: const Icon(CupertinoIcons.ellipsis_vertical,
+                    color: Colors.grey))
           ],
+          bottom: const TabBar(
+            labelPadding: EdgeInsets.all(10),
+            indicatorColor: tabColor,
+            indicatorWeight: 4,
+            labelColor: tabColor,
+            unselectedLabelColor: Colors.grey,
+            labelStyle: TextStyle(fontWeight: FontWeight.bold),
+            tabs: [
+              Text('CHATS'),
+              Text('STATUS'),
+              Text('CALLS'),
+            ],
+          ),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(10),
+          child: ListView.builder(
+            itemBuilder: ((context, index) {
+              return ListTile(
+                title: Text(info[index]['name'].toString()),
+                subtitle: Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Text(info[index]['message'].toString()),
+                ),
+              );
+            }),
+            itemCount: info.length,
+          ),
         ),
       ),
     );
