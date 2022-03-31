@@ -50,15 +50,22 @@ class MobileScreenLayout extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: ListView.builder(
             itemBuilder: ((context, index) {
-              return ListTile(
-                leading: CircleAvatar(
-                  backgroundImage:
-                      NetworkImage(info[index]['profilePic'].toString()),
-                ),
-                title: Text(info[index]['name'].toString()),
-                subtitle: Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: Text(info[index]['message'].toString()),
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage:
+                        NetworkImage(info[index]['profilePic'].toString()),
+                  ),
+                  title: Text(info[index]['name'].toString()),
+                  subtitle: Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Text(info[index]['message'].toString()),
+                  ),
+                  trailing: Text(
+                    info[index]['time'].toString(),
+                    style: const TextStyle(fontSize: 13, color: Colors.grey),
+                  ),
                 ),
               );
             }),
