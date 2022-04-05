@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:watsapp_clone/colors.dart';
-import 'package:watsapp_clone/info.dart';
+import 'package:watsapp_clone/widgets/contact_list.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
@@ -46,32 +46,7 @@ class MobileScreenLayout extends StatelessWidget {
             ],
           ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(10),
-          child: ListView.builder(
-            itemBuilder: ((context, index) {
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage:
-                        NetworkImage(info[index]['profilePic'].toString()),
-                  ),
-                  title: Text(info[index]['name'].toString()),
-                  subtitle: Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: Text(info[index]['message'].toString()),
-                  ),
-                  trailing: Text(
-                    info[index]['time'].toString(),
-                    style: const TextStyle(fontSize: 13, color: Colors.grey),
-                  ),
-                ),
-              );
-            }),
-            itemCount: info.length,
-          ),
-        ),
+        body: ContactList(),
         floatingActionButton: const CircleAvatar(
           radius: 25,
           child: Icon(Icons.message_outlined),
