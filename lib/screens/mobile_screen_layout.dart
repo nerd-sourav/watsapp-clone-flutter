@@ -29,7 +29,7 @@ class MobileScreenLayout extends StatelessWidget {
             ),
             IconButton(
                 onPressed: () => {},
-                icon: const Icon(CupertinoIcons.ellipsis_vertical,
+                icon: const Icon(CupertinoIcons.game_controller,
                     color: Colors.grey))
           ],
           bottom: const TabBar(
@@ -47,7 +47,7 @@ class MobileScreenLayout extends StatelessWidget {
           ),
         ),
         body: const ContactList(),
-        floatingActionButton:  CircleAvatar(
+        floatingActionButton: CircleAvatar(
           radius: 25,
           child: Icon(Icons.message_rounded),
           backgroundColor: messageColor,
