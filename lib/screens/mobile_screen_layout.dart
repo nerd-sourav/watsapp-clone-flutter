@@ -47,7 +47,7 @@ class MobileScreenLayout extends StatelessWidget {
           ),
         ),
         body: const ContactList(),
-        floatingActionButton: CircleAvatar(
+        floatingActionButton: const CircleAvatar(
           radius: 25,
           child: Icon(Icons.message_rounded),
           backgroundColor: messageColor,
