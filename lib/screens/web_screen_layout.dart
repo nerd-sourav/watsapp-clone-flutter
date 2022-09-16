@@ -25,7 +25,7 @@ class WebScreenLayout extends StatelessWidget {
               child: Column(children: const [
                 //web profile bar
                 // web search bar
-                // changes made
+                // changes ma
                 ContactList(),
               ]),
             ),
