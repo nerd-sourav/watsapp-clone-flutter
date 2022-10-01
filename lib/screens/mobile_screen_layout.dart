@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:watsapp_clone/colors.dart';
-import 'package:watsapp_clone/widgets/contact_list.dart';
+import 'package:watsapp_clone/utils/widgets/contact_list.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
