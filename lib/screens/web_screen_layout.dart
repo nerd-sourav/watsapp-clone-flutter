@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:watsapp_clone/widgets/contact_list.dart';
+
+import '../utils/widgets/contact_list.dart';
 
 class WebScreenLayout extends StatelessWidget {
   const WebScreenLayout({Key? key}) : super(key: key);
